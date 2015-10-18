@@ -81,14 +81,15 @@ load_linux(unsigned int args)
 	VIDEO_CURSOR_POSY = 0;
 	VIDEO_ATTR = 0xffc8c8c8;
 	//
-	printk("ATV: ATV_BootLoader v0.8 (http://atv-bootloader.googlecode.com/)\n");
-	printk("ATV: Copyright (C) 2008 ATV Bootloader Team - Licensed under the GPL v2\n");
-	printk("ATV: FB Start 0x%08X, with %d height %d rowb %d depth %d\n", 
-		mach_bp->video.addr, 
-		mach_bp->video.width,  
-		mach_bp->video.height, 
-		mach_bp->video.rowb, 
-		mach_bp->video.depth);
+	//printk("ATV: ATV_BootLoader v0.8 (http://atv-bootloader.googlecode.com/)\n");
+	//printk("ATV: Copyright (C) 2008 ATV Bootloader Team - Licensed under the GPL v2\n");
+	//printk("ATV: FB Start 0x%08X, with %d height %d rowb %d depth %d\n", 
+	//	mach_bp->video.addr, 
+	//	mach_bp->video.width,  
+	//	mach_bp->video.height, 
+	//	mach_bp->video.rowb, 
+	//	mach_bp->video.depth);
+	printk("OSMC is booting");
 
 	//printk("mach_bp->devtree_len=0x%08X, mach_bp->devtree_ptr=0x%08X", 
 	//	mach_bp->devtree_len, mach_bp->devtree_ptr);
@@ -135,18 +136,18 @@ load_linux(unsigned int args)
 		mach_bp->video.rowb,
 		mach_bp->video.addr);
 	*/
-	printk("ATV: kernel command line-> %s\n", cmdline);
+	//printk("ATV: kernel command line-> %s\n", cmdline);
 
 	// now format the linux kernel boot params
 	create_boot_params(bp, cmdline);
 	//sleep(10);
 
-	printk("ATV: starting Linux...\n");
+	//printk("ATV: starting Linux...\n");
 	// kernel_start = 0x100000 defined in system.c
 	kd.kstart = kd.kentry = kernel_start;
 	kd.kend   = ((UINT8*)kd.kstart) + KERNEL_RESERVE_SIZE;
 	start_kernel(kd.kentry, bp);
-	printk("ATV: error something's is wrong\n");
+	//printk("ATV: error something's is wrong\n");
 
 	while(1);
 }
