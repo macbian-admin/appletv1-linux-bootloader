@@ -22,7 +22,7 @@ endif
 # start.o must be 1st in the link order (ld below)
 OBJ	= start.o vsprintf.o console.o utils.o elilo_code.o darwin_code.o linux_code.o boot_loader.o
 
-KERN_OBJ:= vmlinuz.obj initrd.obj
+KERN_OBJ:= vmlinuz.obj
 
 mach_kernel: $(KERN_OBJ) $(OBJ)
 	$(LD) $(LDFLAGS) -arch $(ARCH) -o mach_kernel $(OBJ) $(KERN_OBJ) \
