@@ -9,7 +9,7 @@
         <key>Boot Logo</key>
         <string>BootLogo.png</string>
         <key>Kernel Flags</key>
-        <string>atv-boot=patchstick.sh</string>
+        <string>BOOTFLAGS</string>
         <key>Kernel</key>
         <string>mach_kernel</string>
 </dict>
