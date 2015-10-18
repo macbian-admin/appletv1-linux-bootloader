@@ -11,8 +11,8 @@ ARCH	= i386
 
 # if Linxu, use the darwin-cross tools to compile/link
 ifeq ($(OSTYPE),Linux)
-  CC  := $(pwd)/darwin-cross/bin/i386-apple-darwin8-gcc-4.0
-  LD  := $(pwd)/darwin-cross/bin/i386-apple-darwin8-ld
+  CC  := $(shell pwd)/darwin-cross/bin/i386-apple-darwin8-gcc-4.0
+  LD  := $(shell pwd)/darwin-cross/bin/i386-apple-darwin8-ld
 else
   CC  := /usr/bin/gcc-4.0
   LD  := /usr/bin/ld
