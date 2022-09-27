@@ -9,7 +9,7 @@
         <key>Boot Logo</key>
         <string>BootLogo.png</string>
         <key>Kernel Flags</key>
-        <string>BOOTFLAGS</string>
+        <string>(place your own boot flags here; can usually be copied from /boot/grub/grub.cfg)</string>
         <key>Kernel</key>
         <string>mach_kernel</string>
 </dict>
